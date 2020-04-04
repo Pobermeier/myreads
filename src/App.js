@@ -1,10 +1,18 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Main from './pages/Main';
+import Search from './pages/Search';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <>
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/Search" exact component={Search} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 

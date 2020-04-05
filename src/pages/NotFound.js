@@ -1,24 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '../layout/Navbar';
+import FlatButton from '../components/FlatButton';
 
 const NotFound = () => {
   return (
     <>
       <Navbar />
       <div className="container">
-        <h1>404 | Page Not Found</h1>
-        <Link
-          to="/"
-          className="waves-effect waves-teal btn"
-          style={{
-            margin: '20px 0px 0px',
-            backgroundColor: '#e4e4e4',
-            color: '#000',
-          }}
-        >
-          Back to Main Page
-        </Link>
+        <h2>404 | Page Not Found</h2>
+        <FlatButton route="/" buttonText="Back to Main Page" />
       </div>
     </>
   );

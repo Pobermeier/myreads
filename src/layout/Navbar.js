@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav>
         <div className="nav-wrapper">
           <Link to="/" className="brand-logo center">
-            MyReads
+            <span className="material-icons">menu_book</span> MyReads
           </Link>
         </div>
       </nav>

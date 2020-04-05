@@ -30,9 +30,9 @@ function App() {
 
   const updateBookShelf = async (book, shelf) => {
     setLoading(true);
-
     await api.update(book, shelf);
-    getAllBooks();
+    await getAllBooks();
+    setLoading(false);
   };
 
   return (

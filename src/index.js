@@ -5,8 +5,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css';
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <React.StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>,
   document.getElementById('root'),
 );

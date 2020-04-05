@@ -6,13 +6,14 @@ import * as api from '../utils/api';
 const Book = ({ book, shelves, updateBookShelf }) => {
   const [storedBook, setStoredBook] = useState({ shelf: 'none' });
   useEffect(() => {
-    getStoredBook(book.id);
+    const storedBook = getStoredBook(book.id);
+    setStoredBook(storedBook);
     // eslint-disable-next-line
   }, []);
 
   const getStoredBook = async (id) => {
     const storedBook = await api.get(id);
-    setStoredBook(storedBook);
+    return storedBook;
   };
 
   if (!book && !book.imageLinks) return null;

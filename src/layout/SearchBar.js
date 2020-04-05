@@ -14,9 +14,8 @@ const SearchBar = ({ search }) => {
               placeholder="Search by book title or by author..."
               required
               onChange={(e) => {
-                const query = e.target.value;
-                setSearchText(query);
-                search(query);
+                setSearchText(e.target.value);
+                search(e.target.value);
               }}
               value={searchText}
             />

@@ -12,9 +12,9 @@ const Search = ({ shelves, updateBookShelf }) => {
 
   const searchBooks = async (query) => {
     setLoading(true);
-    setBooks([]);
     if (query.trim() === '') {
       setLoading(false);
+      setBooks([]);
       return;
     }
     let books = await api.search(query);

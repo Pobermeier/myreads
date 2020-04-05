@@ -5,16 +5,20 @@ import * as api from '../utils/api';
 
 const Book = ({ book, shelves, updateBookShelf }) => {
   const [storedBook, setStoredBook] = useState({ shelf: 'none' });
-  useEffect(() => {
-    const storedBook = getStoredBook(book.id);
-    setStoredBook(storedBook);
-    // eslint-disable-next-line
-  }, []);
 
-  const getStoredBook = async (id) => {
-    const storedBook = await api.get(id);
-    return storedBook;
-  };
+  useEffect(() => {
+    let mounted = true;
+    async function getBook(id) {
+      const storedBook = await api.get(id);
+      if (mounted) setStoredBook(storedBook);
+    }
+
+    getBook(book.id);
+
+    return () => {
+      mounted = false;
+    };
+  }, [book]);
 
   if (!book && !book.imageLinks) return null;
 
@@ -36,9 +40,9 @@ const Book = ({ book, shelves, updateBookShelf }) => {
             <select
               name="options"
               value={storedBook.shelf}
-              onChange={(e) => {
+              onChange={async (e) => {
                 updateBookShelf(book, e.target.value);
-                getStoredBook(book.id);
+                setStoredBook({ shelf: e.target.value });
               }}
             >
               <option value="moveto" disabled>

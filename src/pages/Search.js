@@ -12,19 +12,19 @@ const Search = ({ shelves, updateBookShelf }) => {
   const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
-    setBooks({});
     async function updateSearch() {
       setLoading(true);
-      let books = [];
+      let queriedBooks = [];
 
       if (searchText.length > 0 && searchText !== '') {
-        books = await api.search(searchText);
-        books =
-          Array.isArray(books) &&
-          books.length > 0 &&
-          books.filter((book) => book.imageLinks !== undefined);
+        queriedBooks = await api.search(searchText);
+
+        queriedBooks =
+          Array.isArray(queriedBooks) && queriedBooks.length > 0
+            ? queriedBooks.filter((book) => book.imageLinks !== undefined)
+            : [];
       }
-      setBooks(books);
+      setBooks(queriedBooks);
       setLoading(false);
     }
 
@@ -33,7 +33,7 @@ const Search = ({ shelves, updateBookShelf }) => {
 
   return (
     <div>
-      <SearchBar searchText={[searchText]} setSearchText={setSearchText} />
+      <SearchBar searchText={searchText} setSearchText={setSearchText} />
 
       <div className="container">
         <FlatButton route="/" buttonText="Back to Main Page" />

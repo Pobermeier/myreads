@@ -20,20 +20,18 @@ const Book = ({ book, shelves, updateBookShelf }) => {
     };
   }, [book]);
 
-  if (!book && !book.imageLinks) return null;
-
   return (
     <li>
       <div className="book">
         <div className="book-top">
-          {book.imageLinks && book.imageLinks.smallThumbnail && (
+          {book.imageLinks.smallThumbnail && (
             <img
               src={book.imageLinks.smallThumbnail}
               alt={book.title}
               className="book-cover"
             />
           )}
-          {!book.imageLinks && !book.imageLinks.smallThumbnail && (
+          {!book.imageLinks.smallThumbnail && (
             <div className="book-cover-title">{book.title}</div>
           )}
           <div className="book-shelf-changer">

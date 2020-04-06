@@ -5,16 +5,16 @@ import BookShelf from './BookShelf';
 const SearchResults = ({ books, shelves, updateBookShelf, searchText }) => {
   if (books === undefined || searchText === '') {
     return (
-      <h3 style={{ textAlign: 'center', marginTop: '25vh' }}>
+      <h4 style={{ textAlign: 'center', marginTop: '25vh' }}>
         Enter a value in the search box above to discover new books to read...
-      </h3>
+      </h4>
     );
   }
   if (!Array.isArray(books)) {
     return (
-      <h3 style={{ textAlign: 'center', marginTop: '25vh' }}>
+      <h4 style={{ textAlign: 'center', marginTop: '25vh' }}>
         No results found...
-      </h3>
+      </h4>
     );
   } else if (books.length === 0 || books === []) {
     return null;

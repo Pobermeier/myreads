@@ -54,11 +54,7 @@ function App() {
           path="/Search"
           exact
           render={() => (
-            <Search
-              books={books}
-              shelves={categories}
-              updateBookShelf={updateBookShelf}
-            />
+            <Search shelves={categories} updateBookShelf={updateBookShelf} />
           )}
         />
         <Route component={NotFound} />

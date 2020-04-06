@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({ search }) => {
-  const [searchText, setSearchText] = useState('');
+const SearchBar = ({ setSearchText, searchText }) => {
+  const triggerSearch = (searchValue) => {
+    setSearchText(searchValue);
+  };
 
   return (
     <nav>
@@ -13,22 +15,13 @@ const SearchBar = ({ search }) => {
               type="search"
               placeholder="Search by book title or by author..."
               required
-              onChange={(e) => {
-                setSearchText(e.target.value);
-                search(e.target.value);
-              }}
+              onChange={(e) => triggerSearch(e.target.value)}
               value={searchText}
             />
             <label className="label-icon" htmlFor="search">
               <i className="material-icons">search</i>
             </label>
-            <i
-              className="material-icons"
-              onClick={() => {
-                setSearchText('');
-                search('');
-              }}
-            >
+            <i className="material-icons" onClick={() => triggerSearch('')}>
               close
             </i>
           </div>
@@ -39,7 +32,8 @@ const SearchBar = ({ search }) => {
 };
 
 SearchBar.propTypes = {
-  search: PropTypes.func.isRequired,
+  setSearchText: PropTypes.func.isRequired,
+  searchText: PropTypes.string.isRequired,
 };
 
 export default SearchBar;

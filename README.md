@@ -1,9 +1,11 @@
 # MyReads - Book Discovery App
 
-MyReads is a small-scale front-end application powered by React: 
+MyReads is a small-scale front-end application powered by React:
 Discover interesting new reading opportunities with the integrated search functionality and add them to your reading list. Organize your book list neatly and keep track on your reading progress by sorting your books into categorized book shelves.
 
 This application was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Visit the [Create React App documentation](https://facebook.github.io/create-react-app/docs/) for more information about the bootstrapping process and scripts create-react-app offers.
+
+You can check out the live project by clicking [here](https://dreamy-montalcini-ecda51.netlify.com/).
 
 ## Installation
 
@@ -13,7 +15,7 @@ Clone this repository onto your local machine and then install all dependencies 
 
 After all dependencies have been installed you can run the app locally in development mode or you can built out the static assets to deploy them on any webserver.
 
-## Run the app in  development mode
+## Run the app in development mode
 
 After installing all dependencies you can run the app on the webpack dev server by running the following command:
 

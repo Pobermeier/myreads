@@ -5,7 +5,7 @@ Discover interesting new reading opportunities with the integrated search functi
 
 This application was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Visit the [Create React App documentation](https://facebook.github.io/create-react-app/docs/) for more information about the bootstrapping process and scripts create-react-app offers.
 
-You can check out the live project by clicking [here](https://dreamy-montalcini-ecda51.netlify.com/).
+You can check out the live project by clicking [here](https://myreads2020.netlify.app/).
 
 ## Installation
 
